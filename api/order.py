@@ -6,6 +6,10 @@ from pathlib import Path
 import json
 import stripe
 
+# Load environment variables from .env if available
+from dotenv import load_dotenv
+load_dotenv()
+
 stripe.api_key = os.environ.get("STRIPE_API_KEY")
 
 order_bp = Blueprint('order', __name__)
@@ -51,6 +55,11 @@ def place_order():
         with open(orders_file, 'w') as f:
             json.dump(orders, f, indent=2)
 
+        # Calculate Stripe Connect 1% application fee and set connected account
+        connected_account_id = "acct_1Ra1aXIWwUyVV5n2"  # Updated test connected account
+        unit_price = int(float(product['price']) * 100)
+        application_fee = int(unit_price * order['quantity'] * 0.01)
+
         # Create Stripe Checkout Session
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
@@ -60,7 +69,7 @@ def place_order():
                     'product_data': {
                         'name': f"{product['title']} ({brand})",
                     },
-                    'unit_amount': int(float(product['price']) * 100),
+                    'unit_amount': unit_price,
                 },
                 'quantity': order['quantity'],
             }],
@@ -71,6 +80,12 @@ def place_order():
             metadata={
                 'brand': brand,
                 'order_id': new_order['order_id']
+            },
+            payment_intent_data={
+                'application_fee_amount': application_fee,
+                'transfer_data': {
+                    'destination': connected_account_id
+                }
             }
         )
 

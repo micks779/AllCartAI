@@ -4,6 +4,10 @@ from pathlib import Path
 import json
 import stripe
 
+# Load environment variables from .env if available
+from dotenv import load_dotenv
+load_dotenv()
+
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET")
 
 confirm_bp = Blueprint('confirm', __name__)
