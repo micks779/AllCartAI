@@ -4,7 +4,7 @@ info:
   description: A unified API for searching and ordering products from multiple brands/stores.
   version: '1.0.0'
 servers:
-  - url: https://b2b8-82-32-65-226.ngrok-free.app
+  - url: https://all-cart-ai.vercel.app
 paths:
   /api/products:
     get:

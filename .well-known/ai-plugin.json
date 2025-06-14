@@ -1,15 +1,15 @@
 {
     "schema_version": "v1",
-    "name_for_human": "Oplente AI Ordering",
-    "name_for_model": "oplente_ai_ordering",
-    "description_for_human": "Order teas and superfoods from Oplente directly in ChatGPT.",
-    "description_for_model": "Use this plugin to browse Oplente's product catalog and place orders.",
+    "name_for_human": "AllCartAI",
+    "name_for_model": "allcartai",
+    "description_for_human": "Order products or services from multiple AI-ready brands using ChatGPT.",
+    "description_for_model": "Search and order products from brands like Oplente using natural language.",
     "auth": { "type": "none" },
     "api": {
       "type": "openapi",
-      "url": "https://b2b8-82-32-65-226.ngrok-free.app/openapi.yaml"
+      "url": "https://all-cart-ai.vercel.app/openapi.yaml"
     },
-    "logo_url": "https://oplente.com/cdn/shop/files/logo.png",
-    "contact_email": "support@oplente.com",
-    "legal_info_url": "https://oplente.com/pages/privacy-policy"
-  }
+    "logo_url": "https://all-cart-ai.vercel.app/logo.png",
+    "contact_email": "support@allcartai.com",
+    "legal_info_url": "https://all-cart-ai.vercel.app/legal"
+}
