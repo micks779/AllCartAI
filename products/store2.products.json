@@ -1,0 +1,29 @@
+[
+  {
+    "id": "GODWINE",
+    "title": "Organic Green Tea",
+    "price": 12.99,
+    "description": "Premium organic green tea leaves, sourced from sustainable farms in Japan.",
+    "category": "tea",
+    "image_url": "https://example.com/green-tea.jpg",
+    "stock": 100
+  },
+  {
+    "id": "GODWINE",
+    "title": "Chamomile Herbal Tea",
+    "price": 9.99,
+    "description": "Calming chamomile tea with natural honey flavor.",
+    "category": "tea",
+    "image_url": "https://example.com/chamomile.jpg",
+    "stock": 75
+  },
+  {
+    "id": "GODWINE",
+    "title": "Tea Infuser Set",
+    "price": 24.99,
+    "description": "Stainless steel tea infuser with 4 different strainers.",
+    "category": "accessories",
+    "image_url": "https://example.com/infuser.jpg",
+    "stock": 50
+  }
+] 

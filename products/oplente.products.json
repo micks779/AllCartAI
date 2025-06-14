@@ -1,0 +1,51 @@
+[
+    {
+      "id": "oplente-high-greens",
+      "title": "High Greens",
+      "price": 22.00,
+      "description": "Elevate your wellness with High Greens, a powerful blend designed to boost not just your body but your frequency. Packed with hemp, triple maca (red, black, and yellow), spirulina, beetroot, and moringa, this superfood mix provides holistic support for all body systems. Hemp delivers plant-based protein and omega-3s, maca enhances vitality and hormone balance, spirulina fuels energy, beetroot supports circulation, and moringa offers a nutrient-dense antioxidant boost. Perfect for smoothies, pre-workout, or as a nourishing breakfast alternative. Enjoy it mixed with apple juice and honey or apple juice and kiwi for a delicious, energizing start to your day.",
+      "image": "https://placehold.co/400x400?text=High+Greens",
+      "slug": "high-greens"
+    },
+    {
+      "id": "oplente-sleep-tea",
+      "title": "ZEN MATCHA",
+      "price": 24.99,
+      "description": "Energy Without the Crash\n\nDitch coffee. Get focus, energy & brainpower – without the jitters. This blend is crafted for sustained energy and mental clarity.\n\nBoosts focus & mental clarity\n\nEnhances memory & cognitive function\n\nLong-lasting energy without the crash\n\nKey Ingredients:\n\nMatcha Green Tea – Provides clean energy and powerful antioxidants.",
+      "image": "https://placehold.co/400x400?text=Zen+Matcha",
+      "slug": "zen-matcha"
+    },
+    {
+      "id": "oplente-brain-focus",
+      "title": "Brain Focus Tea",
+      "price": 16.99,
+      "description": "Boost mental clarity and concentration.",
+      "image": "https://placehold.co/400x400?text=Brain+Focus+Tea",
+      "slug": "brain-focus-tea"
+    },
+    {
+      "id": "oplente-Daytime Eye Repair Tea",
+      "title": "Daytime Eye Repair Tea",
+      "price": 15.00,
+      "description": "Bright Vision & Energy Boost\n\nGive your eyes the refresh they need – while boosting your energy naturally. This tea helps fight eye fatigue, supports vision clarity, and enhances focus for modern screen-heavy lifestyles.\n\nProtects against digital eye strain & fatigue\n\nEnhances circulation & hydration for clearer vision\n\nGently boosts energy without caffeine crashes",
+      "image": "https://placehold.co/400x400?text=Daytime+Eye+Repair+Tea",
+      "slug": "Daytime Eye Repair Tea"
+    },
+    {
+      "id": "oplente-performance-herbal-blend",
+      "title": "PERFORMANCE HERBAL BLEND",
+      "price": 24.99,
+      "description": "Unlock Strength, Stamina & Vitality\n\nThis herbal blend is designed to enhance your body's natural power, energy, and endurance. Whether you're an athlete, a high performer, or looking for natural hormonal balance, this formula delivers:\n\nBoosts physical & mental stamina\nSupports healthy testosterone & hormone balance\nEnhances circulation & blood flow\nIncreases endurance & recovery\n\nKey Ingredients & Benefits:\n\nMoringa – Rich in vitamins & minerals for all-around energy.\nGinkgo Biloba – Improves circulation, memory & mental clarity.\nHorny Goat Weed – Natural support for stamina and hormone balance.",
+      "image": "https://placehold.co/400x400?text=Performance+Herbal+Blend",
+      "slug": "performance-herbal-blend"
+    },
+    {
+      "id": "oplente-maximum-performance-longevity-blend",
+      "title": "MAXIMUM PERFORMANCE & LONGEVITY BLEND",
+      "price": 49.99,
+      "description": "Peak Performance, Recovery & Stress Resilience\n\nA next-level herbal blend designed for those who want to optimize every part of their health—energy, recovery, brain function, and resilience.\n\nSupercharges endurance, strength & energy\nSupports muscle recovery & stress resilience\nEnhances circulation & overall wellness\nBalances hormones & improves focus\n\nKey Ingredients & Benefits:\n\nDamiana – Elevates mood & increases stamina.",
+      "image": "https://placehold.co/400x400?text=Maximum+Performance+Longevity+Blend",
+      "slug": "maximum-performance-longevity-blend"
+    }
+  ]
+  

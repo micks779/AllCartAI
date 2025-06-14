@@ -1,0 +1,127 @@
+openapi: 3.0.1
+info:
+  title: AllCartAI API
+  description: A unified API for searching and ordering products from multiple brands/stores.
+  version: '1.0.0'
+servers:
+  - url: https://b2b8-82-32-65-226.ngrok-free.app
+paths:
+  /api/products:
+    get:
+      summary: Get products by brand
+      operationId: getProducts
+      parameters:
+        - name: brand
+          in: query
+          description: Filter products by brand name
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    title:
+                      type: string
+                    price:
+                      type: number
+                    description:
+                      type: string
+                    category:
+                      type: string
+        '400':
+          description: Invalid brand specified
+  /api/search:
+    get:
+      summary: Search products across all brands
+      operationId: searchProducts
+      parameters:
+        - name: query
+          in: query
+          description: Search query string
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of matching products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    title:
+                      type: string
+                    price:
+                      type: number
+                    description:
+                      type: string
+                    category:
+                      type: string
+        '400':
+          description: Query parameter is required
+  /api/order:
+    post:
+      summary: Place a new order and receive Stripe Checkout URL
+      operationId: placeOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: string
+                quantity:
+                  type: integer
+                email:
+                  type: string
+                brand:
+                  type: string
+              required: [product_id, quantity, email, brand]
+      responses:
+        '200':
+          description: Order created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  order_id:
+                    type: string
+                  checkout_url:
+                    type: string
+        '400':
+          description: Invalid request parameters
+        '500':
+          description: Server error
+  /api/confirm:
+    post:
+      summary: Stripe webhook endpoint for payment confirmation
+      operationId: confirmPayment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook processed successfully
+        '400':
+          description: Invalid webhook payload
