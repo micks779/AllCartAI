@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AllCartAI Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/public/logo.svg" />
+  <link rel="icon" href="/public/logo.png" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f8fa;
+    }
+    .header {
+      background: #21213a;
+      color: #fff;
+      padding: 2rem 1rem 1rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header img {
+      height: 50px;
+      border-radius: 10px;
+      background: #fff;
+      padding: 6px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .main {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 2px 24px 0 #21213a0a;
+      padding: 2rem;
+    }
+    .brand-select {
+      margin-bottom: 2rem;
+    }
+    .products {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .product {
+      border: 1px solid #e3e6ec;
+      border-radius: 14px;
+      padding: 1.2rem;
+      background: #f9fafd;
+      transition: box-shadow .1s;
+      box-shadow: 0 1px 6px #0001;
+    }
+    .product h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.2rem;
+      color: #21213a;
+    }
+    .product .desc {
+      color: #4e4e66;
+      margin-bottom: 10px;
+    }
+    .product .price {
+      color: #1a9217;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    @media (max-width: 800px) {
+      .main { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="/public/logo.svg" alt="AllCartAI Logo" style="height: 50px;">
+    <h1>AllCartAI Marketplace</h1>
+  </div>
+  <div class="main">
+    <p>Browse and discover products from AI-ready brands. Pick a store below:</p>
+    <div class="brand-select">
+      <label for="brandSelect"><b>Choose a brand/store:</b></label>
+      <select id="brandSelect">
+        <option value="oplente">Oplente (Health)</option>
+        <option value="store2">Second Store (Supplements)</option>
+        <option value="demostore">Demo Store (Skincare)</option>
+      </select>
+    </div>
+    <div id="products" class="products"></div>
+    <p style="margin-top:2rem;color:#888;font-size:.93rem;">
+      Powered by AllCartAI API.
+    </p>
+  </div>
+  <script>
+    const brandSelect = document.getElementById('brandSelect');
+    function loadProducts(brand) {
+      document.getElementById('products').innerHTML = "Loading products...";
+      fetch(`/api/products?brand=${brand}`)
+        .then(r => r.json())
+        .then(products => {
+          if(!Array.isArray(products) || !products.length) {
+            document.getElementById('products').innerHTML = `<div>No products found for this brand.</div>`;
+            return;
+          }
+          document.getElementById('products').innerHTML = products.map(product => `
+            <div class="product">
+              <h3>${product.title}</h3>
+              <div class="desc">${product.description || ''}</div>
+              <div class="price">£${product.price}</div>
+            </div>
+          `).join('');
+        });
+    }
+    brandSelect.addEventListener('change', e => loadProducts(e.target.value));
+    loadProducts(brandSelect.value);
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-from flask import Flask, send_file
+from flask import Flask, send_file, send_from_directory
 from api.products import products_bp
 from api.search import search_bp
 from api.order import order_bp
@@ -11,6 +11,14 @@ app.register_blueprint(products_bp)
 app.register_blueprint(search_bp)
 app.register_blueprint(order_bp)
 app.register_blueprint(confirm_bp)
+
+@app.route('/')
+def index():
+    return send_from_directory('public', 'index.html')
+
+@app.route('/public/<path:filename>')
+def public_files(filename):
+    return send_from_directory('public', filename)
 
 @app.route('/success')
 def payment_success():
@@ -52,7 +60,7 @@ def plugin_manifest():
 
 @app.route('/openapi.yaml')
 def openapi_spec():
-    return send_file('openapi.yaml', mimetype='text/yaml')
+    return send_from_directory('.', 'openapi.yaml')
 
 if __name__ == '__main__':
     app.run(debug=True)
