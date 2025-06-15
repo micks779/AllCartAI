@@ -12,14 +12,6 @@ app.register_blueprint(search_bp)
 app.register_blueprint(order_bp)
 app.register_blueprint(confirm_bp)
 
-@app.route('/')
-def index():
-    return send_from_directory('public', 'index.html')
-
-@app.route('/public/<path:filename>')
-def public_files(filename):
-    return send_from_directory('public', filename)
-
 @app.route('/success')
 def payment_success():
     return '''
@@ -60,7 +52,7 @@ def plugin_manifest():
 
 @app.route('/openapi.yaml')
 def openapi_spec():
-    return send_from_directory('.', 'openapi.yaml')
+    return send_from_directory('static', 'openapi.yaml', mimetype='text/yaml')
 
 if __name__ == '__main__':
     app.run(debug=True)

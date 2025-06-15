@@ -74,8 +74,8 @@ def place_order():
                 'quantity': order['quantity'],
             }],
             mode='payment',
-            success_url='http://localhost:5000/success',
-            cancel_url='http://localhost:5000/cancel',
+            success_url='https://allcartai.onrender.com/success',
+            cancel_url='https://allcartai.onrender.com/cancel',
             customer_email=order['email'],
             metadata={
                 'brand': brand,
