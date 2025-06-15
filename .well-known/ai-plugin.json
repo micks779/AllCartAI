@@ -7,9 +7,9 @@
     "auth": { "type": "none" },
     "api": {
       "type": "openapi",
-      "url": "https://all-cart-ai.vercel.app/openapi.yaml"
+      "url": "https://allcartai.onrender.com/openapi.yaml"
     },
-    "logo_url": "https://all-cart-ai.vercel.app/logo.png",
+    "logo_url": "https://allcartai.onrender.com/public/logo.png",
     "contact_email": "support@allcartai.com",
-    "legal_info_url": "https://all-cart-ai.vercel.app/legal"
+    "legal_info_url": "https://allcartai.onrender.com/legal"
 }
