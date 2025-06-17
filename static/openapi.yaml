@@ -120,6 +120,9 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                event_id:
+                  type: string
               additionalProperties: true
       responses:
         '200':
